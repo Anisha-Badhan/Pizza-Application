@@ -1,0 +1,15 @@
+C:\Users\User\source\repos\PizzaApp\bin\Debug\PizzaApp.exe.config
+C:\Users\User\source\repos\PizzaApp\bin\Debug\PizzaApp.exe
+C:\Users\User\source\repos\PizzaApp\bin\Debug\PizzaApp.pdb
+C:\Users\User\source\repos\PizzaApp\obj\Debug\PizzaApp.csprojAssemblyReference.cache
+C:\Users\User\source\repos\PizzaApp\obj\Debug\MainWindow.g.cs
+C:\Users\User\source\repos\PizzaApp\obj\Debug\App.g.cs
+C:\Users\User\source\repos\PizzaApp\obj\Debug\PizzaApp_MarkupCompile.cache
+C:\Users\User\source\repos\PizzaApp\obj\Debug\PizzaApp_MarkupCompile.lref
+C:\Users\User\source\repos\PizzaApp\obj\Debug\MainWindow.baml
+C:\Users\User\source\repos\PizzaApp\obj\Debug\PizzaApp.g.resources
+C:\Users\User\source\repos\PizzaApp\obj\Debug\PizzaApp.Properties.Resources.resources
+C:\Users\User\source\repos\PizzaApp\obj\Debug\PizzaApp.csproj.GenerateResource.cache
+C:\Users\User\source\repos\PizzaApp\obj\Debug\PizzaApp.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\PizzaApp\obj\Debug\PizzaApp.exe
+C:\Users\User\source\repos\PizzaApp\obj\Debug\PizzaApp.pdb
