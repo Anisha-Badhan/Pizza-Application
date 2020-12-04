@@ -37,12 +37,12 @@ namespace PizzaApp
         string size = "";
         List<string> toppings = new List<string>();
         List<string> side = new List<string>();
-       // double[] result = {};
         string[] get_toppings = { };
         string[] get_sides = { };
         double tax = 0;
         double grand_total = 0;
-
+        
+        // mathods for size of pizza
         private void rbtnsmall_Checked(object sender, RoutedEventArgs e)
         {  
 
@@ -83,6 +83,7 @@ namespace PizzaApp
             lblTotal.Content ="Total Price: $" + price[2];
             }
 
+        // Methods for crust type
         private void rbtnThin_Checked(object sender, RoutedEventArgs e)
         {
             if (rbtnThin.IsChecked == true)
@@ -122,6 +123,7 @@ namespace PizzaApp
             lblTotal.Content ="Total Price: $" + price[2];
         }
 
+        //Mathods for toppings
         private void cbOlives_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -237,6 +239,7 @@ namespace PizzaApp
             lblTotal.Content ="Total Price: $" + price[2];
         }
 
+        // Methods for Sides
         private void cbWings_Checked(object sender, RoutedEventArgs e)
         {
             CheckBox checkBox = (CheckBox)sender;
@@ -328,6 +331,7 @@ namespace PizzaApp
             lblTotal.Content ="Total Price: $" + price[2];
         }
 
+        //method to calculate the total price
         public double[] Calculate_result()
         {
             topping_price = topps[0] + topps[1] + topps[2] + topps[3] + topps[4];
@@ -336,10 +340,8 @@ namespace PizzaApp
             
             tax = Math.Round((total * 0.13),2);
             grand_total = Math.Round((total + tax),2);
-            //result.Append(total);
-            //result.Append(tax);
-            //result.Append(grand_total);
             double[] result = { total, tax, grand_total };
+            //to pass values to placeOrder window for printing
             get_toppings = toppings.ToArray();
             get_sides = side.ToArray();
             

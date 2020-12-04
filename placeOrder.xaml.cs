@@ -21,12 +21,20 @@ namespace PizzaApp
     /// </summary>
     public partial class placeOrder : Window
     {
+        //prepare global variable for database
         double[] total_price = { };
         string[] topping = { };
         string[] side_value = { };
         string crust_value = "";
         string size_value = "";
 
+        /*
+         * param double[] result
+         * param string[] toppings
+         * param string[] sides
+         * param string size
+         * param string crust
+         */
         public placeOrder(double[] result, string[] toppings, string[] sides, string crust, string size )
         {
             InitializeComponent();
@@ -39,6 +47,7 @@ namespace PizzaApp
             lblTotal.Content = result[2];
             string side = string.Join(",", sides);
             lblSides.Content = side;
+            //updating values of variables for database
             crust_value = crust;
             size_value = size;
             total_price.Append(result[0]);
@@ -47,17 +56,17 @@ namespace PizzaApp
             topping = toppings;
             side_value = sides;
         }
-
+        //takes back to MainWindow to edit order
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             main.Show();
             this.Hide();
         }
-
+        // method to push values to database
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int user_ID = 0;
+            int user_ID = 0;//varable to get value from user_data and pass to order_detail
             string connectionString = "datasource=localhost;port=3306;username=root;password=password;database=pizzaApp;";
             string query1 = "INSERT INTO user_data (`User_ID`, `Name`, `Last_Name`, `Address`) VALUES (NULL, '" + txtName.Text + "', '" + txtLname.Text + "', '" + txtAddress.Text + "')";
             string query2 = "INSERT INTO order_detail (`Order_ID`,`User_ID`, `Size`, `Crust`, `Price`,`Tax`,`Total`)" + 
@@ -89,16 +98,6 @@ namespace PizzaApp
                 {
                     Console.WriteLine("No rows found");
                 }
-                databaseConnection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            //for query2
-            try
-            {
-                databaseConnection.Open();
                 MySqlDataReader myReader2 = commandDatabase2.ExecuteReader();
                 string[] data2 = new string[6];
                 if (myReader2.HasRows)
@@ -106,7 +105,7 @@ namespace PizzaApp
                     while (myReader2.Read())
                     {
                         data2[0] = myReader2.GetString(0);
-                        data2[1] = myReader2.GetString(1);
+                        
                         data2[2] = myReader2.GetString(2);
                         data2[3] = myReader2.GetString(3);
                         data2[4] = myReader2.GetString(4);
@@ -124,6 +123,7 @@ namespace PizzaApp
             {
                 MessageBox.Show(ex.Message);
             }
+            
         }
     }
 }
