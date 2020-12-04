@@ -22,7 +22,7 @@ namespace PizzaApp
     public partial class placeOrder : Window
     {
         //prepare global variable for database
-        double[] total_price = { };
+        double[] total_price = new double[3];
         string[] topping = { };
         string[] side_value = { };
         string crust_value = "";
@@ -50,9 +50,9 @@ namespace PizzaApp
             //updating values of variables for database
             crust_value = crust;
             size_value = size;
-            total_price.Append(result[0]);
-            total_price.Append(result[1]);
-            total_price.Append(result[2]);
+            total_price[0] = result[0];
+            total_price[1] = result[1];
+            total_price[2] = result[2];
             topping = toppings;
             side_value = sides;
         }
@@ -77,10 +77,10 @@ namespace PizzaApp
 
             commandDatabase1.CommandTimeout = 60;
             commandDatabase2.CommandTimeout = 60;
-
+            databaseConnection.Open();
             try
             {
-                databaseConnection.Open();
+                
                 MySqlDataReader myReader1 = commandDatabase1.ExecuteReader();
                 user_ID = Convert.ToInt32(commandDatabase2.ExecuteScalar());
                 string[] data1 = new string[4];
@@ -94,10 +94,6 @@ namespace PizzaApp
                         data1[3] = myReader1.GetString(3);
                     }
                 }
-                else
-                {
-                    Console.WriteLine("No rows found");
-                }
                 MySqlDataReader myReader2 = commandDatabase2.ExecuteReader();
                 string[] data2 = new string[6];
                 if (myReader2.HasRows)
@@ -105,7 +101,7 @@ namespace PizzaApp
                     while (myReader2.Read())
                     {
                         data2[0] = myReader2.GetString(0);
-                        
+
                         data2[2] = myReader2.GetString(2);
                         data2[3] = myReader2.GetString(3);
                         data2[4] = myReader2.GetString(4);
@@ -123,7 +119,8 @@ namespace PizzaApp
             {
                 MessageBox.Show(ex.Message);
             }
-            
+               
+           
         }
     }
 }

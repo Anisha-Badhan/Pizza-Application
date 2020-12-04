@@ -15,7 +15,7 @@
         <Button Content="Place Order" HorizontalAlignment="Left" Margin="477,362,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="Button_Click" Background="#FFE45151" FontWeight="Bold"/>
         <Rectangle Fill="#FFE0DC51" HorizontalAlignment="Left" Height="186" Margin="32,49,0,0" Stroke="Black" VerticalAlignment="Top" Width="706"/>
         <Label Content="Sides" HorizontalAlignment="Left" Margin="64,167,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,1.237" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Toppings" HorizontalAlignment="Left" Margin="63,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,0.956" FontSize="14" FontWeight="Bold">
+        <Label Content="Toppings" HorizontalAlignment="Left" Margin="62,133,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,0.956" FontSize="14" FontWeight="Bold">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -41,8 +41,8 @@
         <Label x:Name="lblToppings" Content="" HorizontalAlignment="Left" Margin="160,134,0,0" VerticalAlignment="Top" Width="353" FontSize="14" FontWeight="Bold"/>
         <Label x:Name="lblSides" Content="" HorizontalAlignment="Left" Margin="160,168,0,0" VerticalAlignment="Top" Width="353" FontSize="14" FontWeight="Bold"/>
         <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="584,197,0,0" VerticalAlignment="Top" Width="75" Click="btnEdit_Click" Background="#FFE45151" FontSize="14"/>
-        <Label Content="Before Tax" HorizontalAlignment="Left" Margin="520,69,0,0" VerticalAlignment="Top" Width="86" FontSize="14" FontWeight="Bold"/>
-        <Label Content="Tax" HorizontalAlignment="Left" Margin="520,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.479,0.95" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Before Tax" HorizontalAlignment="Left" Margin="520,69,0,0" VerticalAlignment="Top" Width="78" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Tax" HorizontalAlignment="Left" Margin="520,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.479,0.95" FontSize="14" FontWeight="Bold"/>
         <Label Content="Total" HorizontalAlignment="Left" Margin="520,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.424,1.747" FontSize="14" FontWeight="Bold"/>
         <Label x:Name="lblPrice" Content="" HorizontalAlignment="Left" Margin="633,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.432,1.631" Width="70" FontSize="14" FontWeight="Bold"/>
         <Label x:Name="lblTax" Content="" HorizontalAlignment="Left" Margin="633,100,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.432,1.631" Width="70" FontSize="14" FontWeight="Bold"/>
