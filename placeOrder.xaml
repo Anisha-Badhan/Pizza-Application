@@ -1,0 +1,58 @@
+﻿<Window x:Class="PizzaApp.placeOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PizzaApp"
+        mc:Ignorable="d"
+        Title="placeOrder" Height="450" Width="800">
+    <Grid Margin="0,0,3.6,0">
+        <Grid.Background>
+            <ImageBrush ImageSource="https://as2.ftcdn.net/jpg/01/68/41/29/500_F_168412993_aOynQXIG4OanoZZkNPGUjmJERSn9Pn4q.jpg" TileMode="FlipXY" Opacity="0.6"/>
+        </Grid.Background>
+        <Label Content="Items in the cart" HorizontalAlignment="Left" Margin="64,10,0,0" VerticalAlignment="Top" Width="254" Height="34" FontWeight="Bold" FontSize="16"/>
+        <Rectangle Fill="#FF696F1E" HorizontalAlignment="Left" Height="151" Margin="143,240,0,0" Stroke="Black" VerticalAlignment="Top" Width="463"/>
+        <Button Content="Place Order" HorizontalAlignment="Left" Margin="477,362,0,0" VerticalAlignment="Top" Width="75" Height="22" Click="Button_Click" Background="#FFE45151"/>
+        <Rectangle Fill="#FFE0DC51" HorizontalAlignment="Left" Height="186" Margin="32,49,0,0" Stroke="Black" VerticalAlignment="Top" Width="706"/>
+        <Label Content="Sides" HorizontalAlignment="Left" Margin="64,167,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,1.237" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Toppings" HorizontalAlignment="Left" Margin="63,134,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.497,0.956" FontSize="14" FontWeight="Bold">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-1.271"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Content="Crust" HorizontalAlignment="Left" Margin="64,100,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.569,0.096" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Size" HorizontalAlignment="Left" Margin="66,73,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontWeight="Bold" FontSize="14">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.946"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label x:Name="lblSize" HorizontalAlignment="Left" Margin="160,69,0,0" VerticalAlignment="Top" Width="141" Height="29" FontWeight="Bold" Content="Lable" FontSize="14"/>
+        <Label x:Name="lblCrust" Content="" HorizontalAlignment="Left" Margin="160,100,0,0" VerticalAlignment="Top" Width="141" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblToppings" Content="" HorizontalAlignment="Left" Margin="160,134,0,0" VerticalAlignment="Top" Width="353" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblSides" Content="" HorizontalAlignment="Left" Margin="160,168,0,0" VerticalAlignment="Top" Width="353" FontSize="14" FontWeight="Bold"/>
+        <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="584,197,0,0" VerticalAlignment="Top" Width="75" Click="btnEdit_Click" Background="#FFE45151" FontSize="14"/>
+        <Label Content="Before Tax" HorizontalAlignment="Left" Margin="520,69,0,0" VerticalAlignment="Top" Width="78" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Tax" HorizontalAlignment="Left" Margin="520,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="4.479,0.95" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="520,120,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.424,1.747" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblPrice" Content="" HorizontalAlignment="Left" Margin="633,69,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.432,1.631" Width="70" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblTax" Content="" HorizontalAlignment="Left" Margin="633,100,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.432,1.631" Width="70" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lblTotal" Content="" HorizontalAlignment="Left" Margin="633,126,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.432,1.631" Width="70" FontSize="14" FontWeight="Bold"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="162,258,0,0" VerticalAlignment="Top" Width="73"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="162,314,0,0" VerticalAlignment="Top" Width="73"/>
+        <Label Content="Last Name" HorizontalAlignment="Left" Margin="162,286,0,0" VerticalAlignment="Top" Width="73"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="29" Margin="307,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245"/>
+        <TextBox x:Name="txtLname" HorizontalAlignment="Left" Height="23" Margin="307,289,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245"/>
+        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="23" Margin="307,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="245"/>
+
+    </Grid>
+</Window>
