@@ -77,10 +77,10 @@ namespace PizzaApp
 
             commandDatabase1.CommandTimeout = 60;
             commandDatabase2.CommandTimeout = 60;
-            databaseConnection.Open();
+            
             try
             {
-                
+                databaseConnection.Open();
                 MySqlDataReader myReader1 = commandDatabase1.ExecuteReader();
                 user_ID = Convert.ToInt32(commandDatabase2.ExecuteScalar());
                 string[] data1 = new string[4];
@@ -94,6 +94,8 @@ namespace PizzaApp
                         data1[3] = myReader1.GetString(3);
                     }
                 }
+                databaseConnection.Close();
+                databaseConnection.Open();
                 MySqlDataReader myReader2 = commandDatabase2.ExecuteReader();
                 string[] data2 = new string[6];
                 if (myReader2.HasRows)
