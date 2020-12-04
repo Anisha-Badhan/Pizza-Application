@@ -61,7 +61,7 @@ namespace PizzaApp
             string connectionString = "datasource=localhost;port=3306;username=root;password=password;database=pizzaApp;";
             string query1 = "INSERT INTO user_data (`User_ID`, `Name`, `Last_Name`, `Address`) VALUES (NULL, '" + txtName.Text + "', '" + txtLname.Text + "', '" + txtAddress.Text + "')";
             string query2 = "INSERT INTO order_detail (`Order_ID`,`User_ID`, `Size`, `Crust`, `Price`,`Tax`,`Total`)" + 
-                "VALUES (NULL,'"+user_ID +"', '" + txtName.Text + "', '" + size_value + "', '" + crust_value + "', '"+ total_price[0]+"', '"+total_price[1]+"', '"+total_price[2]+"')";
+                "VALUES (NULL,'"+user_ID +"', '" + size_value + "', '" + crust_value + "', '"+ total_price[0]+"', '"+total_price[1]+"', '"+total_price[2]+"')";
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase1 = new MySqlCommand(query1, databaseConnection);
             MySqlCommand commandDatabase2 = new MySqlCommand(query2, databaseConnection);
