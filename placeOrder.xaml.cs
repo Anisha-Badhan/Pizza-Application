@@ -23,8 +23,8 @@ namespace PizzaApp
     {
         //prepare global variable for database
         double[] total_price = new double[3];
-        string[] topping = { };
-        string[] side_value = { };
+        string topping = "";
+        string side_value = "";
         string crust_value = "";
         string size_value = "";
 
@@ -53,8 +53,8 @@ namespace PizzaApp
             total_price[0] = result[0];
             total_price[1] = result[1];
             total_price[2] = result[2];
-            topping = toppings;
-            side_value = sides;
+            topping = topps;
+            side_value = side;
         }
         //takes back to MainWindow to edit order
         private void btnEdit_Click(object sender, RoutedEventArgs e)
@@ -66,50 +66,21 @@ namespace PizzaApp
         // method to push values to database
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int user_ID = 0;//varable to get value from user_data and pass to order_detail
             string connectionString = "datasource=localhost;port=3306;username=root;password=password;database=pizzaApp;";
-            string query1 = "INSERT INTO user_data (`User_ID`, `Name`, `Last_Name`, `Address`) VALUES (NULL, '" + txtName.Text + "', '" + txtLname.Text + "', '" + txtAddress.Text + "')";
-            string query2 = "INSERT INTO order_detail (`Order_ID`,`User_ID`, `Size`, `Crust`, `Price`,`Tax`,`Total`)" + 
-                "VALUES (NULL,'"+user_ID +"', '" + size_value + "', '" + crust_value + "', '"+ total_price[0]+"', '"+total_price[1]+"', '"+total_price[2]+"')";
+            string query1 = "INSERT INTO user_data (`User_ID`, `Name`, `Last_Name`, `Address`, `Size`, `Crust`,`Toppings`,`Sides`, `Price`,`Tax`,`Total`) VALUES (NULL, '" + txtName.Text + "', '" + txtLname.Text + "', '" + txtAddress.Text + "', '" + size_value + "', '" + crust_value + "', '"+topping+"','"+side_value+"','" + total_price[0] + "', '" + total_price[1] + "', '" + total_price[2] + "')";
+            
             MySqlConnection databaseConnection = new MySqlConnection(connectionString);
             MySqlCommand commandDatabase1 = new MySqlCommand(query1, databaseConnection);
-            MySqlCommand commandDatabase2 = new MySqlCommand(query2, databaseConnection);
 
             commandDatabase1.CommandTimeout = 60;
-            commandDatabase2.CommandTimeout = 60;
-            
             try
             {
                 databaseConnection.Open();
                 MySqlDataReader myReader1 = commandDatabase1.ExecuteReader();
-                user_ID = Convert.ToInt32(commandDatabase2.ExecuteScalar());
-                string[] data1 = new string[4];
                 if (myReader1.HasRows)
                 {
-                    while (myReader1.Read())
-                    {
-                        data1[0] = myReader1.GetString(0);
-                        data1[1] = myReader1.GetString(1);
-                        data1[2] = myReader1.GetString(2);
-                        data1[3] = myReader1.GetString(3);
-                    }
-                }
-                databaseConnection.Close();
-                databaseConnection.Open();
-                MySqlDataReader myReader2 = commandDatabase2.ExecuteReader();
-                string[] data2 = new string[6];
-                if (myReader2.HasRows)
-                {
-                    while (myReader2.Read())
-                    {
-                        data2[0] = myReader2.GetString(0);
-
-                        data2[2] = myReader2.GetString(2);
-                        data2[3] = myReader2.GetString(3);
-                        data2[4] = myReader2.GetString(4);
-                        data2[5] = myReader2.GetString(5);
-                        data2[6] = myReader2.GetString(6);
-                    }
+                    myReader1 = commandDatabase1.ExecuteReader();
+                    MessageBox.Show("Order Placed Successfully");
                 }
                 else
                 {
@@ -121,8 +92,6 @@ namespace PizzaApp
             {
                 MessageBox.Show(ex.Message);
             }
-               
-           
         }
     }
 }
