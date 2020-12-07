@@ -42,9 +42,9 @@ namespace PizzaApp
             lblSize.Content = size;
             string topps = string.Join(",", toppings);
             lblToppings.Content = topps;
-            lblPrice.Content = result[0];
-            lblTax.Content = result[1];
-            lblTotal.Content = result[2];
+            lblPrice.Content = "$"+result[0];
+            lblTax.Content = "$"+result[1];
+            lblTotal.Content = "$"+result[2];
             string side = string.Join(",", sides);
             lblSides.Content = side;
             //updating values of variables for database
